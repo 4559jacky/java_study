@@ -18,5 +18,7 @@ public class Introduce {
 		System.out.printf("안녕하세요~\n");
 		System.out.printf("저는 \"%s\"입니다.\n", "김철수");
 		System.out.printf("나이는 %d살이고, mbti는 %s입니다.", 20,"istp");
+		
+		// 집에서 pull 완료 다시 commit해서 github에 push하기
 	}
 }
