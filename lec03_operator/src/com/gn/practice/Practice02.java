@@ -11,7 +11,7 @@ public class Practice02 {
 		System.out.println(result); //186
 		result /= 3;
 		System.out.println(result); //62
-		result %= 4;
+		result %= 3;
 		System.out.println(result); //2
 	}
 }
