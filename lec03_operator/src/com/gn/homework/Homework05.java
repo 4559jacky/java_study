@@ -12,13 +12,17 @@ public class Homework05 {
 		
 		char c = num.charAt(7);
 		
-		if(c=='1'||c=='3') {
-			System.out.println("입력하신 주민번호는 남성입니다.");
-		} else if(c=='2'||c=='4') {
-			System.out.println("입력하신 주민번호는 여성입니다.");
-		} else {
-			System.out.println("입력하신 주민번호는 잘못된 값입니다.");
-		}
+//		if(c=='1'||c=='3') {
+//			System.out.println("입력하신 주민번호는 남성입니다.");
+//		} else if(c=='2'||c=='4') {
+//			System.out.println("입력하신 주민번호는 여성입니다.");
+//		} else {
+//			System.out.println("입력하신 주민번호는 잘못된 값입니다.");
+//		}
+		
+		String str = (c=='1'||c=='3') ? "남성" : (c=='2'||c=='4') ? "여성" : "잘못된 값";
+		System.out.println("입력하신 주민번호는 " + str + "입니다.");
+		
 		
 		
 		
