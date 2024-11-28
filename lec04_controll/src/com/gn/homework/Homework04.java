@@ -23,11 +23,7 @@ public class Homework04 {
 		System.out.print("정보시스템구축관리 점수 : ");
 		int sub5 = sc.nextInt();
 		
-		String subject1 = "";
-		String subject2 = "";
-		String subject3 = "";
-		String subject4 = "";
-		String subject5 = "";
+		String subject = "";
 		
 		if(sub1>=40&&sub2>=40&&sub3>=40&&sub4>=40&&sub5>=40) {
 			if((sub1+sub2+sub3+sub4+sub5)/5>=60) {
@@ -37,21 +33,21 @@ public class Homework04 {
 			}
 		} else {
 			if(sub1<40) {
-				subject1 = "소프트웨어설계 과목 ";
+				subject += "소프트웨어설계 과목, ";
 			}
 			if(sub2<40) {
-				subject2 = "소프트웨어개발 과목 ";
+				subject += "소프트웨어개발 과목, ";
 			}
 			if(sub3<40) {
-				subject3 = "데이터베이스구축 과목 ";
+				subject += "데이터베이스구축 과목, ";
 			}
 			if(sub4<40) {
-				subject4 = "프로그래밍언어활용 과목 ";
+				subject += "프로그래밍언어활용 과목, ";
 			}
 			if(sub5<40) {
-				subject5 = "정보시스템구축관리 과목 ";
+				subject += "정보시스템구축관리 과목 ";
 			}
-			System.out.println(subject1+subject2+subject3+subject4+subject5 +"과락으로 불합격입니다.");
+			System.out.println(subject+"과락으로 불합격입니다.");
 		}
 		
 		
