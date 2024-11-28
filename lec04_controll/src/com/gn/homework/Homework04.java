@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Homework04 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		
+		System.out.println("=== 합격인가? 불합격인가? ===");
 		System.out.println("각 과목의 점수를 입력하세요.");
 		
 		System.out.print("소프트웨어설계 점수 : ");
@@ -33,16 +33,16 @@ public class Homework04 {
 			}
 		} else {
 			if(sub1<40) {
-				subject += "소프트웨어설계 과목, ";
+				subject += "소프트웨어설계 과목 ";
 			}
 			if(sub2<40) {
-				subject += "소프트웨어개발 과목, ";
+				subject += "소프트웨어개발 과목 ";
 			}
 			if(sub3<40) {
-				subject += "데이터베이스구축 과목, ";
+				subject += "데이터베이스구축 과목 ";
 			}
 			if(sub4<40) {
-				subject += "프로그래밍언어활용 과목, ";
+				subject += "프로그래밍언어활용 과목 ";
 			}
 			if(sub5<40) {
 				subject += "정보시스템구축관리 과목 ";
