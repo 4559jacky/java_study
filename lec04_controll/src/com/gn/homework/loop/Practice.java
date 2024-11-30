@@ -3,6 +3,11 @@ package com.gn.homework.loop;
 import java.util.Scanner;
 
 public class Practice {
+	
+	// github Test
+	// 24.11.30 16:18
+	// test 16:22
+	
 	// 구구단 무한반복
 	public void practice02() {
 		Scanner sc = new Scanner(System.in);
