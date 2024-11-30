@@ -19,6 +19,7 @@ public class Practice {
 				System.out.print("숫자 : ");
 				num = sc.nextInt();
 			} else if(num==0) {
+				sc.close();
 				break;
 			} else {
 				for(int i=num; i<=9; i++) {
@@ -43,6 +44,7 @@ public class Practice {
 			text = sc.nextLine();
 			if(text.equals("탈출")) {
 				System.out.println("프로그램 종료");
+				sc.close();
 				break;
 			} else {
 				System.out.println(text);
@@ -95,6 +97,7 @@ public class Practice {
 						System.out.print("박");
 					}
 				}
+				sc.close();
 				break;
 			}
 		}
