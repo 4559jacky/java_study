@@ -116,7 +116,7 @@ public class Practice {
 		
 		String message = "";
 		
-		if(routine>0) {
+		if(0<routine&&routine<=5) {
 			if(routine==1) {
 				message = "스쿼트 운동 시간입니다.";
 			} else if(routine==2) {
@@ -127,11 +127,12 @@ public class Practice {
 				message = "풀업 운동 시간입니다.";
 			} else if(routine==5) {
 				message = "오늘도 수고하셨습니다. ";
-			} else {
-				message = "목록에 있는 숫자만 입력해주세요.";
-			}
-		} else {
-			message = "양수만 입력해주세요. ";
+			} 
+		} else if(routine<=0) {
+			message = "양수만 입력해주세요.";
+		}
+		else {
+			message = "목록에 있는 숫자만 입력해주세요.";
 		}
 		System.out.println(message);
 	}
