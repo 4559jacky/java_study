@@ -11,7 +11,7 @@ public class Practice01 {
 		// (1) 선언+초기화
 		String[] friends1 = {"박지영", "김태우", "이지훈", "최유진", "정승호"};
 		// (2) 인덱스를 활용
-		String[] friends2 = new String[5];
+		String[] friends2 = new String[5]; 
 		friends2[0] = "박지영";
 		friends2[1] = "김태우";
 		friends2[2] = "이지훈";
