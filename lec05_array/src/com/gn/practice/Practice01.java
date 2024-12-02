@@ -22,5 +22,13 @@ public class Practice01 {
 			System.out.println(i+1 + " : " + friends1[i]);
 		}
 		
+		// 홀수번째 친구만 출력
+		System.out.println("홀수번째 친구만 출력하기");
+		for(int i=0; i<friends1.length; i++) {
+			if(i%2==0) {
+				System.out.println(i+1 + " : " + friends1[i]);
+			}
+		}
+		
 	}
 }
