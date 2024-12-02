@@ -8,6 +8,29 @@ public class Practice {
 	// 24.11.30 16:18
 	// test 16:22
 	
+	// 1~50까지 짝수 합하기
+	public void practice01() {
+		Scanner sc = new Scanner(System.in);
+		int num = 0;
+		while(true) {
+			System.out.print("정수(1~50) : ");
+			num = sc.nextInt();
+			System.out.println("1~50 사이의 정수를 입력하세요.");
+			if(1<=num&&num<=50) {
+				int sum = 0;
+				System.out.print("합계 : ");
+				for(int i=1; i<=num; i++) {
+					if(i%2==0) {
+						sum += i;
+					}
+				}
+				System.out.println(sum);
+				break;
+			}
+		}
+		
+	}
+	
 	// 구구단 무한반복
 	public void practice02() {
 		Scanner sc = new Scanner(System.in);
@@ -53,6 +76,37 @@ public class Practice {
 				break;
 			} else {
 				System.out.println(text);
+			}
+		}
+	}
+	
+	// 게임 재시작
+	public void practice04() {
+		Scanner sc = new Scanner(System.in);
+		String str = "";
+		do {
+			System.out.println("게임을 실행합니다!");
+			System.out.println("게임을 다시 플레이하시겠습니까?(yes/no)");		
+			str = sc.nextLine();
+		} while(str.equals("yes"));
+		System.out.println("게임을 종료합니다.");
+		
+		
+	}
+		
+	// 양수만 더하기
+	public void practice05() {
+		Scanner sc = new Scanner(System.in);
+		int sum = 0;
+		while(true) {
+			System.out.print("숫자(0을 입력하면 종료) : ");
+			int num = sc.nextInt();
+			if(num>0) {
+				sum += num;
+			}
+			if(num==0) {
+				System.out.print("양수의 합계 : " + sum);
+				break;
 			}
 		}
 	}
@@ -106,4 +160,37 @@ public class Practice {
 			}
 		}
 	}
+	
+	// 1~50까지 짝수 합하기
+	public void practice08() {
+		Scanner sc = new Scanner(System.in);
+		while(true) {
+			System.out.print("문자열 : ");
+			String str = sc.nextLine();
+			System.out.print("문자 : ");
+			char c = sc.nextLine().charAt(0);
+			int count = 0;
+			for(int i=0; i<str.length(); i++) {
+				if(str.charAt(i)==c) {
+					count++;
+				}
+			}
+			System.out.println("포함된 개수 : " + count);
+			
+			System.out.print("다시 입력하시겠습니까? : ");
+			String str1 = sc.nextLine();
+			if(str1.equals("N")) {
+				sc.close();
+				break;
+			} else {
+				System.out.println("잘못된 대답입니다. 다시 입력해주세요.");
+				System.out.print("다시 입력하시겠습니까? : ");
+				str1 = sc.nextLine();
+			}
+			
+		}
+		
+		
+	}
+
 }
