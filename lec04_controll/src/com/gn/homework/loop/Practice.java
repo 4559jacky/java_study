@@ -161,27 +161,41 @@ public class Practice {
 		}
 	}
 	
-	// 1~50까지 짝수 합하기
+	// 문자열의 개수
 	public void practice08() {
 		Scanner sc = new Scanner(System.in);
-		while(true) {
-			System.out.print("문자열 : ");
-			String str = sc.nextLine();
-			System.out.print("문자 : ");
-			char c = sc.nextLine().charAt(0);
-			int count = 0;
-			for(int i=0; i<str.length(); i++) {
-				if(str.charAt(i)==c) {
-					count++;
-				}
+		System.out.print("문자열 : ");
+		String str = sc.nextLine();
+		System.out.print("문자 : ");
+		char c = sc.nextLine().charAt(0);
+		int count = 0;
+		for(int i=0; i<str.length(); i++) {
+			if(str.charAt(i)==c) {
+				count++;
 			}
-			System.out.println("포함된 개수 : " + count);
-			
-			System.out.print("다시 입력하시겠습니까? : ");
-			String str1 = sc.nextLine();
-			if(str1.equals("N")) {
+		}
+		System.out.println("포함된 개수 : " + count);
+		
+		System.out.print("다시 입력하시겠습니까? : ");
+		String str1 = sc.nextLine();
+		while(true) {
+			if(str1.equals("N")||str1.equals("n")) {
 				sc.close();
 				break;
+			} else if(str1.equals("Y")||str1.equals("y")) {
+				System.out.print("문자열 : ");
+				str = sc.nextLine();
+				System.out.print("문자 : ");
+				c = sc.nextLine().charAt(0);
+				count = 0;
+				for(int i=0; i<str.length(); i++) {
+					if(str.charAt(i)==c) {
+						count++;
+					}
+				}
+				System.out.println("포함된 개수 : " + count);
+				System.out.print("다시 입력하시겠습니까? : ");
+				str1 = sc.nextLine();
 			} else {
 				System.out.println("잘못된 대답입니다. 다시 입력해주세요.");
 				System.out.print("다시 입력하시겠습니까? : ");
