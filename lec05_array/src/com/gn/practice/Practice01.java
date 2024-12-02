@@ -18,6 +18,7 @@ public class Practice01 {
 		friends2[3] = "최유진";
 		friends2[4] = "정승호";
 		
+		
 		for(int i=0; i<friends1.length; i++) {
 			System.out.println(i+1 + " : " + friends1[i]);
 		}
