@@ -87,13 +87,12 @@ public class Practice {
 	// 박수박수박
 	public void practice07() {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("정수 : ");
-		int num = sc.nextInt();
+		
 		while(true) {
+			System.out.print("정수 : ");
+			int num = sc.nextInt();
 			if(num<=0) {
 				System.out.println("양수가 아닙니다.");
-				System.out.print("정수 : ");
-				num = sc.nextInt();
 			} else {
 				for(int i=1; i<=num; i++) {
 					if(i%2==0) {
