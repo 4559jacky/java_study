@@ -193,5 +193,73 @@ public class DimensionalArray {
 			System.out.print(d);
 		}
 		
+		System.out.println();
+		System.out.println("=========================");
+		
+		// 13. 배열의 복사
+		// 배열은 한번 생성되면 길이 변경 불가능
+		// 더 많은 저장 공간 필요시
+		// 기존의 배열보다  더 큰 배열 생성
+		// 이전 배열이 가진 내용 복사
+		
+		// 배열 복사의 2가지 방법 - (1) 얕은 복사
+		// 객체의 주소값을 복사하는 것
+		// Stack에 있는 주소값 복사
+		// Heap에 있는 데이터는 그대로 유지
+		// 하나의 메모리를 두 개의 배열에서 동시에 참조
+		// - 명시적으로 두 개의 배열이지만 보이지만 하나의 몸체 공유
+		// - 하나의 배열에서 값 변경 시 다른 배열에서도 값 변경
+		int[] arr1 = {5,6,7,8};
+		//int[] arr2 = arr1;
+		// (2) 깊은 복사
+		int[] arr2 = new int[arr1.length];
+		for(int i=0; i<arr2.length; i++) {
+			arr2[i] = arr1[i];
+		}
+		arr2[3] = 1000;
+		for(int num1 : arr1) {
+			System.out.print(num1+", ");
+		}
+		System.out.println();
+		for(int num2 : arr2) {
+			System.out.print(num2+", ");
+		}
+		
+		System.out.println();
+		System.out.println("=========================");
+		
+		// Math.random() 1~100 사이의 정수 랜덤값 도출
+		// 0.0이상 1.0미만의 난수 실수를 생성
+		// 실행할 때마다 다른 값 반환
+		// 무작위로 값 생성 가능
+		// Math.random() 자체는 실수형 데이터를 생성
+		// 정수형 결과를 도출하기 위해서는 작업 필요
+		double basic = Math.random();
+		System.out.println(basic);
+		
+		// 1. (최대값-최소값-1) 만큼 곱하기
+		double hundred = basic*(100-1+1);
+		System.out.println(hundred);
+		
+		// 2. 형변환
+		int casting = (int)hundred;
+		System.out.println(casting);
+		
+		// 3. 최소값 더하기
+		int add = casting + 1;
+		System.out.println(add);
+		
+		// 10~20 사이의 정수 랜덤값
+		int rnd = (int)(Math.random()*11)+10;
+		System.out.println(rnd);
+		
+		// 1~45 사이의 정수 랜덤값
+		int n = 0;
+		while(true) {
+			n = (int)(Math.random()*45) + 1;
+			if(n<=45) break;
+		}
+		System.out.println(n);
+		
 	}
 }

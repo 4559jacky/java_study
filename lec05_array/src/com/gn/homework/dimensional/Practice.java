@@ -68,6 +68,37 @@ public class Practice {
 		}
 	}
 	
+	public void practice04() {
+		int[] lotto = new int[6];
+		int n = 0;
+		int a = 0;
+		while(a<lotto.length) {
+			n = (int)(Math.random() * 45) + 1;
+			boolean isDuplicate = false;
+			for (int i = 0; i < a; i++) {
+			    if (lotto[i] == n) {
+			        isDuplicate = true;
+			        break;
+			    }
+			}
+			if (!isDuplicate) {
+			    lotto[a++] = n;
+			}
+		}
+		for(int i=0; i<lotto.length-1; i++) {
+			for(int j=i+1; j<lotto.length; j++) {
+				if(lotto[i]>lotto[j]) {
+					int temp = lotto[i];
+					lotto[i] = lotto[j];
+					lotto[j] = temp;
+				}
+			}
+		}
+		for(int s : lotto) {
+			System.out.print(s+" ");
+		}
+	}
+	
 	public void practice05() {
 		System.out.print("가위바위보 : ");
 		String str = sc.nextLine();
@@ -199,4 +230,61 @@ public class Practice {
 			}
 		}
 	}
+	
+	public void practice06() {
+		System.out.print("배열의 크기를 입력하세요 : ");
+		int size = sc.nextInt(); // 2
+		String[] strArr = new String[size]; // 크기 : 2
+		String[] strArr1 = {};
+		String[] strArr2 = {};
+		int a =0;
+		String str = sc.nextLine();
+		while(a<size) { // a가 0, 1 일때(size는 2니까)
+			System.out.print((a+1)+"번째 문자열 : "); //1번째, 2번째
+			str = sc.nextLine();
+			strArr[a++] = str; //인덱스 0, 1 값 할당
+		}
+		System.out.print("더 값을 입력하시곘습니까?(Y/N) : ");
+		String answer = sc.nextLine();
+		while(true) {
+			if(answer.equals("Y")||answer.equals("y")) {
+				System.out.print("더 입력하고 싶은 개수 : ");
+				a = size; //
+				size += sc.nextInt();
+				strArr1 = new String[size];
+				if(strArr2.length==0) {
+					for(int i=0; i<strArr.length; i++) {
+						strArr1[i] = strArr[i];
+					}
+				} else {
+					for(int i=0; i<strArr2.length; i++) {
+						strArr1[i] = strArr2[i];
+					}
+				}
+				str = sc.nextLine();
+				while(a<size) { // a가 2, 3 일때(size는 2니까)
+					System.out.print((a+1)+"번째 문자열 : "); //3번째, 4번째
+					str = sc.nextLine();
+					strArr1[a++] = str; //인덱스 2, 3 값 할당
+				}
+				strArr2 = new String[strArr1.length];
+				for(int i=0; i<strArr1.length; i++) {
+					strArr2[i] = strArr1[i];
+				}
+				System.out.print("더 값을 입력하시곘습니까?(Y/N) : ");
+				answer = sc.nextLine();
+			} else if(answer.equals("N")||answer.equals("n")) {
+				for(String s : strArr1) {
+					System.out.println(s);
+				}
+				sc.close();
+				break;
+			} else {
+				System.out.println("입력할 수 없는 값입니다.");
+				sc.close();
+				break;
+			}
+		}
+	}
+	
 }
