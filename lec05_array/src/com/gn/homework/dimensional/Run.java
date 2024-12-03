@@ -14,6 +14,8 @@ public class Run {
 		System.out.println("4. 로또 번호 자동 생성기");
 		System.out.println("5. 컴퓨터와 가위바위보");
 		System.out.println("6. 배열 늘리기");
+		System.out.println("7. 문서 복사하기");
+		System.out.println("8. 오늘의 메뉴판 만들기");
 		System.out.print("선택 : ");
 		int num = sc.nextInt();
 		switch(num) {
@@ -34,6 +36,12 @@ public class Run {
 				break;
 			case 6 :
 				practice.practice06();
+				break;
+			case 7 :
+				practice.practice07();
+				break;
+			case 8 :
+				practice.practice08();
 				break;
 		}
 	}

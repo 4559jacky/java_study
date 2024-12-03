@@ -287,4 +287,69 @@ public class Practice {
 		}
 	}
 	
+	public void practice07() {
+		String[] report = {"Introduction", "Research", "Conclusion"};
+		String[] clone_report = new String[report.length];
+		clone_report[0] = "Team Feedback";
+		for(int i=1; i<report.length; i++) {
+			clone_report[i] = report[i];
+		}
+		int count=0;
+		System.out.print("원본 보고서 : ");
+		for(String s : report) {
+			System.out.print(s);
+			count++;
+			if(count==report.length) {
+				continue;
+			}
+			System.out.print(", ");
+		}
+		System.out.println();
+		count=0;
+		System.out.print("복사된 보고서 : ");
+		for(String s : clone_report) {
+			System.out.print(s);
+			count++;
+			if(count==clone_report.length) {
+				continue;
+			}
+			System.out.print(", ");
+		}
+	}
+	
+	public void practice08() {
+		String[] menu = {"Burger", "Pizza", "Pasta"};
+		String[] add = {"Salad","Soup"};
+		System.out.print("어제 메뉴판 : ");
+		int count = 0;
+		for(String s : menu) {
+			System.out.print(s);
+			count++;
+			if(count==menu.length) {
+				continue;
+			}
+			System.out.print(", ");
+		}
+		System.out.println();
+		String[] menu_add = new String[menu.length+add.length];
+		for(int i=0; i<menu.length; i++) {
+			menu_add[i] = menu[i];
+		}
+		int a = 0;
+		for(int i=menu.length; i<menu_add.length; i++) {
+			menu_add[i] = add[a++];
+		}
+		System.out.print("오늘 메뉴판 : ");
+		count = 0;
+		for(String s : menu_add) {
+			System.out.print(s);
+			count++;
+			if(count==menu_add.length) {
+				continue;
+			}
+			System.out.print(", ");
+		}
+		
+	}
+	
 }
