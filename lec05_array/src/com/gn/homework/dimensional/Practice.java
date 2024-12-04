@@ -104,7 +104,7 @@ public class Practice {
 		String str = sc.nextLine();
 		String[] choices = {"가위", "바위", "보"};
 		Random random = new Random();
-		int com_num = random.nextInt(choices.length);
+		
 		
 		int game_count = 0;
 		int win = 0;
@@ -112,6 +112,7 @@ public class Practice {
 		int lose = 0;
 		
 		while(true) {
+			int com_num = random.nextInt(choices.length);
 			if(str.equals("stop")) {
 				System.out.println(game_count+"전 "+win+"승 "+draw+"무 "+lose+"패");
 				break;
