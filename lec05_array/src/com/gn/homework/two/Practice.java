@@ -78,59 +78,91 @@ public class Practice {
 		{"배", "심", "다", "좀", "다"}, 
 		{"열", "히", "! ", "더", "!! "}};
 		
-		for(int i=0; i<strArr.length; i++) {
-			for(int j=i+1; j<strArr[i].length; j++) {
-				if(i!=j) {
-					String str = strArr[i][j];
-					strArr[i][j] = strArr[j][i];
-					strArr[j][i] = str;
-				}
-			}
-		}
+//		for(int i=0; i<strArr.length; i++) {
+//			for(int j=i+1; j<strArr[i].length; j++) {
+//				if(i!=j) {
+//					String str = strArr[i][j];
+//					strArr[i][j] = strArr[j][i];
+//					strArr[j][i] = str;
+//				}
+//			}
+//		}
+		
 		for(int i=0; i<strArr.length; i++) {
 			for(int j=0; j<strArr[i].length; j++) {
-				System.out.print(strArr[i][j]+ " ");
+				System.out.print(strArr[j][i]+ " ");
 			}
 			System.out.println();
 		}
-		
 	}
+//	public void practice05() {
+//		String[] attend = {"강건강", "남나나", "도대담", "류라라",
+//							"문미미", "박보배", "송성실", "윤예의",
+//							"진재주", "차천축", "피풍표", "홍하하"};
+//		String[][] seat1 = new String[3][2];
+//		String[][] seat2 = new String[3][2];
+//		int a = 0;
+//		for(int i=0; i<seat1.length; i++) {
+//			for(int j=0; j<seat1[i].length; j++) {
+//				seat1[i][j] = attend[a++];
+//			}
+//		}
+//		for(int i=0; i<seat2.length; i++) {
+//			for(int j=0; j<seat2[i].length; j++) {
+//				seat2[i][j] = attend[a++];
+//			}
+//		}
+//		System.out.println("== 1분단 ==");
+//		for(int i=0; i<seat1.length; i++) {
+//			for(int j=0; j<seat1[i].length; j++) {
+//				System.out.print(seat1[i][j]+" ");
+//			}
+//			System.out.println();
+//		}
+//		System.out.println("== 2분단 ==");
+//		for(int i=0; i<seat2.length; i++) {
+//			for(int j=0; j<seat2[i].length; j++) {
+//				System.out.print(seat2[i][j]+" ");
+//			}
+//			System.out.println();
+//		}
+//	}
 	public void practice05() {
 		String[] attend = {"강건강", "남나나", "도대담", "류라라",
 							"문미미", "박보배", "송성실", "윤예의",
 							"진재주", "차천축", "피풍표", "홍하하"};
-		String[][] seat1 = new String[3][2];
-		String[][] seat2 = new String[3][2];
+		String[][] area1 = new String[3][2];
+		String[][] area2 = new String[3][2];
 		int a = 0;
-		for(int i=0; i<seat1.length; i++) {
-			for(int j=0; j<seat1[i].length; j++) {
-				seat1[i][j] = attend[a++];
+		for(int i=0; i<area1.length; i++) {
+			for(int j=0; j<area1[i].length; j++) {
+				area1[i][j] = attend[a++];
 			}
 		}
-		for(int i=0; i<seat2.length; i++) {
-			for(int j=0; j<seat2[i].length; j++) {
-				seat2[i][j] = attend[a++];
+		for(int i=0; i<area2.length; i++) {
+			for(int j=0; j<area2[i].length; j++) {
+				area2[i][j] = attend[a++];
 			}
 		}
 		System.out.println("== 1분단 ==");
-		for(int i=0; i<seat1.length; i++) {
-			for(int j=0; j<seat1[i].length; j++) {
-				System.out.print(seat1[i][j]+" ");
+		for(int i=0; i<area1.length; i++) {
+			for(int j=0; j<area1[i].length; j++) {
+				System.out.print(area1[i][j]+"  ");
 			}
 			System.out.println();
 		}
 		System.out.println("== 2분단 ==");
-		for(int i=0; i<seat2.length; i++) {
-			for(int j=0; j<seat2[i].length; j++) {
-				System.out.print(seat2[i][j]+" ");
+		for(int i=0; i<area2.length; i++) {
+			for(int j=0; j<area2[i].length; j++) {
+				System.out.print(area2[i][j]+"  ");
 			}
 			System.out.println();
 		}
 	}
 	public void practice06() {
 		String[] attend = {"강건강", "남나나", "도대담", "류라라",
-				"문미미", "박보배", "송성실", "윤예의",
-				"진재주", "차천축", "피풍표", "홍하하"};
+							"문미미", "박보배", "송성실", "윤예의",
+							"진재주", "차천축", "피풍표", "홍하하"};
 		String[][] seat1 = new String[3][2];
 		String[][] seat2 = new String[3][2];
 		int a = 0;
@@ -160,10 +192,6 @@ public class Practice {
 		}
 		System.out.print("검색할 학생 이름을 입력하세요 : ");
 		String name = sc.nextLine();
-//		String[] s1 = {"강건강", "남나나", "도대담",
-//						"류라라", "문미미", "박보배"};
-//		String[] s2 = {"송성실", "윤예의", "진재주",
-//				 		"차천축", "피풍표", "홍하하"};
 		String[][][] allSeat = {{{"강건강", "남나나"},
 									{"도대담", "류라라"},
 									{"문미미", "박보배"}},
