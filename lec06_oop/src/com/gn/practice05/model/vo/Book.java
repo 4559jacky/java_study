@@ -23,6 +23,7 @@ public class Book {
 		this.price = price;
 		this.discountRate = discountRate;
 	}
+	
 	// 초기화한 정보 출력하기
 	public void information() {
 		System.out.println("=== " + title + " ===");
