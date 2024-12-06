@@ -40,12 +40,12 @@ public class Run {
 		sc.nextLine();
 		String answer = sc.nextLine();
 		
-		while(count<=10) {
+		while(true) {
+			count++;
 			// 'n'또는 'N'을 입력할때까지 계속 학생 정보 입력받기
-			if(answer.equals("N")||answer.equals("n")) {
+			if(answer.equals("N")||answer.equals("n")||count==10) {
 				break;
 			} else {
-				count++;
 				System.out.print("학년 : ");
 				grade = sc.nextInt();
 				students[count].setGrade(grade);
@@ -63,8 +63,7 @@ public class Run {
 				students[count].setEng(eng);
 				System.out.print("수학점수 : ");
 				math = sc.nextInt();
-				students[count].setMath(math);
-				
+				students[count].setMath(math);	
 				System.out.print("계속 추가하시겠습니까? ");
 				sc.nextLine();
 				answer = sc.nextLine();
