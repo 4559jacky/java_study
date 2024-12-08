@@ -98,6 +98,10 @@ public class Employee {
 		this.address = address;
 	}
 	
-	
+	public String information() {
+		return empNo + ", " + empName + ", " + dept + ", " + job + ", " + age
+				+ ", " + gender + ", " + salary + ", " + bonusPoint + ", " + phone
+				+ ", " + address;
+	}
 	
 }
