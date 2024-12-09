@@ -1,8 +1,13 @@
 package com.gn.study.controller;
 
+import com.gn.study.model.vo.Alarm;
+import com.gn.study.model.vo.Animal;
 import com.gn.study.model.vo.Beverage;
+import com.gn.study.model.vo.Cat;
 import com.gn.study.model.vo.Coffee;
+import com.gn.study.model.vo.Dog;
 import com.gn.study.model.vo.Earth;
+import com.gn.study.model.vo.FireAlarm;
 import com.gn.study.model.vo.Mars;
 import com.gn.study.model.vo.OrangeJuice;
 import com.gn.study.model.vo.Planet;
@@ -69,5 +74,28 @@ public class Run {
 		Planet p2 = new Mars();
 		p1.material();
 		p2.material();
+		
+		
+		// 6. 추상메소드
+		System.out.println("=============================");
+		Animal dog = new Dog(); // 타입(객체 자료형)으론 사용 가능하다
+		dog.sound();
+		Animal cat = new Cat();
+		cat.sound();
+		dog.breath();
+		cat.breath();
+//		Animal a= new Animal();
+		// -> 추상 클래스는 인스턴스화(객체 선언) 할 수 없다.
+		
+		// 7. 인터페이스
+		Alarm a = new FireAlarm();
+		System.out.println(Alarm.MAX_VOLUME);
+		a.soundAlarm();
+		
+		// 인터페이스는 다중상속이 가능하다.
+		
+		
+		
+		
 	}
 }
