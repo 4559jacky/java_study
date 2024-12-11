@@ -13,7 +13,7 @@ public class LoginManager {
 		
 	}
 	
-	public boolean isValidCredentials(String id, String pwd) {
+	private boolean isValidCredentials(String id, String pwd) {
 		if(id.equals("admin")&&pwd.equals("admin1234!")) {
 			return true;
 		} else {

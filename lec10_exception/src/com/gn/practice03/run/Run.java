@@ -18,6 +18,8 @@ public class Run {
 			lm.login(id, pwd);
 		} catch(InvalidCredentialsException e) {
 			System.out.println(e.getMessage());
+		} finally {
+			sc.close();
 		}
 		
 	}

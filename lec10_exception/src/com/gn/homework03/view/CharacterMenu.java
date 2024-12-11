@@ -18,6 +18,8 @@ public class CharacterMenu {
 			System.out.println(str+"에 포함된 영문자 개수 : "+a);
 		} catch(CharCheckException e) {
 			e.printStackTrace();
+		} finally {
+			sc.close();
 		}
 	}
 }
