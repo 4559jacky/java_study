@@ -1,6 +1,11 @@
-	package com.gn.study.controller;
+package com.gn.study.controller;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import com.gn.study.model.vo.Container;
+import com.gn.study.model.vo.Student;
 
 public class Run {
 	public static void main(String[] args) {
@@ -55,7 +60,84 @@ public class Run {
 		System.out.println(con.getAge());
 //		System.out.println(tain.getItem());
 		
-	
+		System.out.println("===========Collection===========");
+		// Colletion
+		// List(ArrayList)
+		// 1. 선언과 생성
+		List<String> list = new ArrayList<>();
+		// 2. 추가 -> add
+		List<String> meal = new ArrayList<>();
+		meal.add("아침");
+		meal.add("점심");		
+		System.out.println(meal);
+		meal.add(1, "간식");
+		System.out.println(meal);
+		
+		// 3. 삭제 -> remove
+		meal.remove(1);
+		System.out.println(meal);
+		
+		meal.clear();
+		System.out.println(meal);
+		
+		// 4. 요소 변경 -> set
+		List<Integer> nums = new ArrayList<>();
+		nums.add(15);
+		nums.add(10);
+		nums.add(23);
+		System.out.println(nums);
+		
+		nums.set(1, 500);
+		System.out.println(nums);
+		
+		// 5. 요소 조회 -> get
+		nums.get(0);
+		System.out.println(nums.get(0));
+		
+		for(int i=0; i<nums.size(); i++) {
+			System.out.println(i+" : "+nums.get(i));
+		}
+		
+		for(int n : nums) {
+			System.out.println(n);
+		}
+		System.out.println("================================");
+		// ArrayList 의 정렬
+		System.out.println("정렬전 : "+nums);
+		
+		Collections.sort(nums);
+		System.out.println("오름차순 : "+nums);
+		
+		Collections.sort(nums, Collections.reverseOrder());
+		System.out.println("내림차순 : "+nums);
+		
+		// ArrayList<객체>
+		System.out.println("================객체==================");
+		List<Student> students = new ArrayList<Student>();
+		students.add(new Student("김철수",50));
+		System.out.println(students);
+		
+		if(students.contains(new Student("김철수",50))) {
+			System.out.println("O");
+		}else {
+			System.out.println("X");
+		}
+			
+		if(students.indexOf(new Student("김철수",50))!=-1) {
+			System.out.println("O");
+		}else {
+			System.out.println("X");
+		}
+		
+		students.add(new Student("이영희",40));
+		students.add(new Student("강길동",30));
+		System.out.println("정렬 전 : "+students);
+		
+		Collections.sort(students);
+		System.out.println("정렬 후 : "+students);
+		
+		
+		
 	}
 	
 }
