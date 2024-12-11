@@ -51,13 +51,15 @@ public class BookController {
 		Book removeBook = null;
         // 2. 반복문을 통해 bookList의 책 중 책 명이 전달 받은 title과 동일하고
         // 저자 명이 전달 받은 author와 동일한 경우 해당 인덱스 도서 삭제 후 빠져나감
+		int count = 0;
 		for(Book book : bookList) {
 			if(book.getTitle().equals(title)&&
 					book.getAuthor().equals(author)) {
 				// 3. 삭제할 도서가 있는 경우 해당 도서를 removeBook에 대입
-				removeBook = book;
-				bookList.remove(book);
+				removeBook = bookList.remove(count);
+				break;
 			}
+			count++;
 		}
         // 4. removeBook 객체 반환
 		return removeBook;

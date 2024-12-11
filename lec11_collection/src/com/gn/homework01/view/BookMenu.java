@@ -148,7 +148,7 @@ public class BookMenu {
 		System.out.println("=== 도서 삭제 ===");
 		// 1. 삭제할 도서명 입력 받기 (String title)
 		System.out.print("도서명 : ");
-		String title = sc.nextLine();
+		String title = sc.next();
 		sc.nextLine();
 		// 2. 삭제할 저자명 입력 받기 (String author)
 		System.out.print("저자명 : ");
