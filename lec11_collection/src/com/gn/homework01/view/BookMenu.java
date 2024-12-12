@@ -9,9 +9,9 @@ import com.gn.homework01.model.vo.Book;
 // 2짱
 public class BookMenu {
 	// Scanner 객체 생성
-		private Scanner sc = new Scanner(System.in);
-		// BookController 객체 생성
-		private BookController bc = new BookController();
+	private Scanner sc = new Scanner(System.in);
+	// BookController 객체 생성
+	private BookController bc = new BookController();
 	
 	public void mainMenu() {
 		// === 가남 도서관에 오신걸 환영합니다 ===
