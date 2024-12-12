@@ -9,6 +9,7 @@ public class Run {
 		list.add(new Product("사과", 1000));
 		list.add(new Product("바나나", 2000));
 		list.add(new Product("딸기", 3000));
+		
 		System.out.println("=== for each로 조회 ===");
 		for(Product p : list) {
 			System.out.println(p);
