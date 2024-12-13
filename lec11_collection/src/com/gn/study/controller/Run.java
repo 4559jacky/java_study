@@ -3,8 +3,10 @@ package com.gn.study.controller;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 import com.gn.study.model.vo.Container;
 import com.gn.study.model.vo.Student;
@@ -155,15 +157,15 @@ public class Run {
 		city.add("서울");
 		System.out.println(city);
 		
-		for(String s : city) {
-			System.out.println(s);
-			if(city.size()==0) {
-				System.out.println("마지막!!");
-				break;
-			} else {
-				city.remove(s);
-			}
-		}
+//		for(String s : city) {
+//			System.out.println(s);
+//			if(city.size()==0) {
+//				System.out.println("마지막!!");
+//				break;
+//			} else {
+//				city.remove(s);
+//			}
+//		}
 		
 		
 		// HashSet 요소 삭제
@@ -183,8 +185,19 @@ public class Run {
 		set1.remove(new Student("김철수", 30));
 		System.out.println(set1);
 		
+		Set<Integer> set6 = new HashSet<>();
 		
-		
+		set6.add(5);
+		set6.add(8);
+		set6.add(1);
+		set6.add(3);
+		set6.add(18);
+		System.out.println(set6);
+		Iterator<Integer> a = set6.iterator();
+		while(a.hasNext()) {
+			int num23 = a.next();
+			System.out.println(num23);
+		}
 	}
 	
 }
