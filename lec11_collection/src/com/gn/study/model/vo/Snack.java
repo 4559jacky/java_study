@@ -1,4 +1,6 @@
-package com.gn.study.model.vo;
+		package com.gn.study.model.vo;
+
+import java.util.Objects;
 
 public class Snack {
 	private String flavor;
@@ -27,6 +29,24 @@ public class Snack {
 	@Override
 	public String toString() {
 		return "[맛=" + flavor + ", 칼로리=" + calory + "]";
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(flavor, calory);
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		boolean result = false;
+		if(obj instanceof Snack) {
+			Snack other = (Snack)obj;
+			if(other.flavor.equals(this.flavor)&&
+					other.calory == this.calory) {
+				result = true;
+			}
+		}
+		return result;
 	}
 	
 }

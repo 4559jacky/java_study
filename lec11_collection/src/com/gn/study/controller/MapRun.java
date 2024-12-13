@@ -1,10 +1,12 @@
 package com.gn.study.controller;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.TreeMap;
 
 import com.gn.study.model.vo.Snack;
 
@@ -96,8 +98,64 @@ public class MapRun {
 			System.out.println(key+"=="+value);
 		}
 		
+
+		System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+		System.out.println("%%%%%%%%%%% %%%%%%%%%%%%%%%");
+		System.out.println("%%%%%%%%%% % %%%%%%%%%%%%%%");
+		System.out.println("%%%%%%%%% %%% %%%%%%%%%%%%%");
+		System.out.println("%%%%%%%% %%%%% %%%%%%%%%%%%");
+		System.out.println("%%%%%%% %%%%%%% %%%%%%%%%%%");
+		System.out.println("%%%%%% %%%%%%%%% %%%%%%%%%%");
+		System.out.println("%%%%% %%%%%%%%%%% %%%%%%%%%");
+		System.out.println("%%%% %%%%%%%%%%%%% %%%%%%%%");
+		System.out.println("%%% %%%%%%%%%%%%%%% %%%%%%%");
+		System.out.println("%% %%%%%%%%%%%%%%%%% %%%%%%");
+		System.out.println("% %%%%%%%%%%%%%%%%%%% %%%%%");
+		System.out.println("%% %%%%%%%%%%%%%%%%% %%%%%%");
+		System.out.println("%%% %%%%%%%%%%%%%%% %%%%%%%");
+		System.out.println("%%%% %%%%%%%%%%%%% %%%%%%%%");
+		System.out.println("%%%%% %%%%%%%%%%% %%%%%%%%%");
+		System.out.println("%%%%%% %%%%%%%%% %%%%%%%%%%");
+		System.out.println("%%%%%%% %%%%%%% %%%%%%%%%%%");
+		System.out.println("%%%%%%%% %%%%% %%%%%%%%%%%%");
+		System.out.println("%%%%%%%%% %%% %%%%%%%%%%%%%");
+		System.out.println("%%%%%%%%%% % %%%%%%%%%%%%%%");
+		System.out.println("%%%%%%%%%%% %%%%%%%%%%%%%%%");
+		System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+		// 8. HashMap 요소 삭제
+//		System.out.println(flower.size()+" : "+flower);
+//		flower.remove("price");
+//		System.out.println(flower.size()+" : "+flower);
+//		flower.clear();
+//		System.out.println(flower.size()+" : "+flower);
 		
+		// 9. HashMap 요소 검색
+		// key값 검색
+		if(flower.containsKey("price")) {
+			System.out.println("O");
+		} else {
+			System.out.println("X");
+		}
+		// value값 검색
+		if(flower.containsValue(40000)) {
+			System.out.println("싸용");
+		} else {
+			System.out.println("비싸용");
+		}
 		
+		// 10. HashMap<객체> 요소 검색
+		if(snackMap.containsValue(new Snack("매운맛", 900))) {
+			System.out.println("주세여");
+		}
+		
+		// 11. LinkedHashMap
+		Map<String, Object> flower2
+			= new TreeMap<>(Collections.reverseOrder());
+		flower2.put("price", 20000);
+		flower2.put("lang", "고백");
+		flower2.put("name", "튤립");
+		
+		System.out.println(flower2);
 		
 		
 	}
