@@ -1,6 +1,10 @@
 package com.gn.homework03.view;
 
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
+import java.util.Set;
 
 import com.gn.homework03.controller.MemberController;
 import com.gn.homework03.model.vo.Member;
@@ -51,45 +55,40 @@ public class MemberMenu {
 		// ***** 회원 메뉴 *****
 		// 회원 메뉴는 회원만 접근할 수 있습니다.
 		// 먼저 회원가입, 로그인을 해주세요.
-		// 1. 비밀번호 바꾸기 -> changePassword()실행
-		// 2. 이름 바꾸기 -> changeName() 실행
-		// 3. 로그아웃 -> "로그아웃 되었습니다." 출력 후 mainMenu로 돌아가기
+		System.out.println("***** 회원 메뉴 *****");
+		System.out.println("회원 메뉴는 회원만 접근할 수 있습니다.");
+		System.out.println("먼저 회원가입, 로그인을 해주세요.");
+
 		// (이전에 수행된 메소드로 돌아가려면 break; 대신 return; 코드를 사용)	
-		System.out.println("(주)가남에 오신것을 환영합니다.");
-		// 원하시는 업무의 번호를 선택하세요.
-		System.out.println("원하시는 메뉴의 번호를 입력하세요.");
-		System.out.println("1. 회원가입");
-		System.out.println("2. 로그인");
-		System.out.println("3. 같은 이름 회원 찾기");
-		System.out.println("9. 종료");
+
+		System.out.println("1. 비밀번호 바꾸기");
+		System.out.println("2. 이름 바꾸기");
+		System.out.println("3. 로그아웃");
 		// 메뉴 선택 :
 		System.out.print("메뉴 선택 : ");
 		int choice = sc.nextInt();
-		// 숫자 입력 받아서 기능 수행하기
+		// 2. 각 메뉴 번호 입력하면 해당 메소드로 이동
 		switch(choice) {
 			case 1 : 
-				joinMember();
-				break;
-			case 2 : 
-				login();
-				memberMenu();
-				break;
-			case 3 : 
-				sameName();
-				break;
-			case 9 : 
-				System.out.println("프로그램을 종료합니다.");
-				sc.close();
+				// 1. 비밀번호 바꾸기 -> changePassword()실행
+				changePassword();
+				return;
+			case 2 :
+				// 2. 이름 바꾸기 -> changeName() 실행
+				changeName();
+				return;
+			case 3 :
+				// 3. 로그아웃 -> "로그아웃 되었습니다." 출력 후 mainMenu로 돌아가기
+				System.out.println("로그아웃 되었습니다.");
+				mainMenu();
 				break;
 			// 만일 1,2,3,9 외의 숫자 입력하면 -> "잘못 입력하였습니다. 다시 입력해주세요." 출력
 			default :
 				System.out.println("잘못 입력하였습니다. 다시 입력해주세요.");
-				mainMenu();
-				break;
+				return;
 		}
-		
-		mainMenu();
 	}
+	
 	public void joinMember() {
 		// 1. 회원가입에 필요한 아이디, 비밀번호, 이름 입력 받음
 		System.out.println("===== 1. 회원가입 =====");
@@ -133,7 +132,7 @@ public class MemberMenu {
 			String success = mc.login(id, password);
 			// 3. 반환 값이 있으면 "OOO님, 환영합니다!" 출력
 			if(!(success==null)) {
-				System.out.println("OOO님, 환영합니다!");
+				System.out.println(success+"님, 환영합니다!");
 				// -> 그 다음 로그인 화면(memberMenu() 메소드 호출)으로 이동
 				// -> memberMenu 호출은 mainMenu() 메소드에서 수행
 				break;
@@ -194,11 +193,12 @@ public class MemberMenu {
 				System.out.println("현재 설정된 이름 : "+name);
 				// 사용자로부터 변경할 이름을 입력 받음
 				System.out.print("변경할 이름 : ");
-				String newName = sc.nextLine();
+				String newName = sc.next();
 				// mc의 changeName()으로 id와 함께 넘김
 				mc.changeName(id, newName);
 				// "이름 변경에 성공하였습니다."출력
 				System.out.println("이름 변경에 성공했습니다.");
+				break;
 			} else {
 				// 3-2. 만일 logIn()으로부터 저장되어 있는 이름을 받지 못했다면
 				// "이름 변경에 실패했습니다. 다시 입력해주세요"출력
@@ -206,17 +206,26 @@ public class MemberMenu {
 				// logIn logIn()으로부터 저장되어 있는 이름을 받을 때까지 반복
 			}
 		}
+		memberMenu();
 	}
 	
 	public void sameName() {
 		// 1. 검색할 이름을 받고 mc의 sameName()메소드로 넘김. 
 		System.out.println("=== 3. 같은 이름 회원 찾기 ===");
 		System.out.print("검색할 이름 : ");
-		String searchName = sc.nextLine(); 
+		String name = sc.next();
 		// -> mc의 sameName()은 TreeMap<String,String>을 리턴
-		mc.sameName(searchName);
+		Map<String, String> sameNameMap = mc.sameName(name);
 		// 2. 반환 값을 가지고 entrySet()을 이용하여 ‘이름-아이디’ 형식으로 출력
-		
+		Set<Entry<String, String>> entrySet = sameNameMap.entrySet();
+		Iterator<Entry<String, String>> itEntry = entrySet.iterator();
+		while(itEntry.hasNext()) {
+			Entry<String, String> entry = itEntry.next();
+			String key = entry.getKey();
+			String value = entry.getValue();
+			System.out.println(value+"-"+key);
+		}
+		mainMenu();
 		
 	}
 	
