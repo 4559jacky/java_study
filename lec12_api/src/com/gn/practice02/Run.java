@@ -21,7 +21,8 @@ public class Run {
 //		for(String s : str) {
 //			System.out.println(s);
 //		}
-		
+		// apple lemon mango 
+		//   5     5    5
 		
 		for(int i =0; i<str.length; i++) {
 			if(max<=str[i].length()) {
