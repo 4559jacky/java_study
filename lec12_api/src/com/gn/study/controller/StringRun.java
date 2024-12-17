@@ -1,4 +1,4 @@
-package com.gn.study.controller;
+	package com.gn.study.controller;
 
 public class StringRun {
 	public static void main(String[] args) {
