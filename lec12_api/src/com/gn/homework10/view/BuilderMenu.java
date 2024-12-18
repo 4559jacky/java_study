@@ -1,4 +1,4 @@
-package com.gn.homework10.view;
+	package com.gn.homework10.view;
 
 import java.util.Scanner;
 
