@@ -11,6 +11,9 @@ public class FileDAO {
 	public boolean checkName(String title){ 
 		boolean result = false;
 		File dir = new File("C:\\test\\sub\\practice");
+		if(!dir.exists()) {
+			dir.mkdirs();
+		}
 		File file = new File(dir, title);
 		if(file.exists()==true) {
 			result = true;
@@ -34,14 +37,14 @@ public class FileDAO {
 		try(BufferedReader br = new BufferedReader(new FileReader(file))) {
 			while(true) {
 				String data = br.readLine();
-				if(data == null) {
-					break;
-				}
-				sb.append(data);
+				if(data == null) break;
+				sb.append(data+"\n");
 			}
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
+		int idx = sb.lastIndexOf("\n");
+		sb.deleteCharAt(idx);
 		return sb;
 	} 
 	public void fileEdit(String title, String text){ 
