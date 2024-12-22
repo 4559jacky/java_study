@@ -12,3 +12,4 @@ public class Run {
 		System.out.println("오늘은 연초(1월 1일)로부터 "+days+"일이 지났습니다.");
 	}
 }
+ 
