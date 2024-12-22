@@ -14,7 +14,7 @@ public class Practice {
 					System.out.println(fileName + " 파일 삭제");
 					f.delete();
 				}
-			}
+			} 
 		}
 		
 	}
