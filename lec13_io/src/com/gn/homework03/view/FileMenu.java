@@ -33,17 +33,17 @@ public class FileMenu {
 	public void fileSave(){
 		 StringBuilder sb = new StringBuilder();
 		 String text = "";
+		 sc.nextLine();
 		 while(true) {
 			 System.out.println("파일에 저장할 내용을 입력하세요.");
 			 System.out.println("ex끝it  이라고 입력하면 종료됩니다.");
 			 System.out.print("내용 : ");
-			 text = sc.next();
+			 text = sc.nextLine();
 			 if(text.equals("ex끝it")) {
 				 break;
 			 }
 			 sb.append(text+"\n");
 		 }
-		 sc.nextLine();
 		 while(true) {
 			 System.out.print("저장할 파일 명을 입력해주세요(ex. myFile.txt) : ");
 			 String title = sc.next();
@@ -67,6 +67,7 @@ public class FileMenu {
 	public void fileOpen(){ 
 		System.out.print("열 파일 명 : ");
 		String title = sc.next();
+		sc.nextLine();
 		if(fc.checkName(title)) {
 			String text = fc.fileOpen(title).toString();
 			System.out.println(text);
@@ -79,6 +80,7 @@ public class FileMenu {
 		StringBuilder sb = new StringBuilder();
 		System.out.print("수정할 파일 명 : ");
 		String title = sc.next();
+		sc.nextLine();
 		if(fc.checkName(title)==false) {
 			System.out.println("없는 파일입니다.");
 		} else {
@@ -86,7 +88,7 @@ public class FileMenu {
 				System.out.println("파일에 저장할 내용을 입력하세요.");
 				System.out.println("ex끝it  이라고 입력하면 종료됩니다.");
 				System.out.print("내용 : ");
-				String text = sc.next();
+				String text = sc.nextLine();
 				if(text.equals("ex끝it")) {
 					break;
 				}
