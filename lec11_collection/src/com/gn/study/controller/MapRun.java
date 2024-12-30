@@ -97,31 +97,7 @@ public class MapRun {
 			Snack value = entry.getValue();
 			System.out.println(key+"=="+value);
 		}
-		
 
-		System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-		System.out.println("%%%%%%%%%%% %%%%%%%%%%%%%%%");
-		System.out.println("%%%%%%%%%% % %%%%%%%%%%%%%%");
-		System.out.println("%%%%%%%%% %%% %%%%%%%%%%%%%");
-		System.out.println("%%%%%%%% %%%%% %%%%%%%%%%%%");
-		System.out.println("%%%%%%% %%%%%%% %%%%%%%%%%%");
-		System.out.println("%%%%%% %%%%%%%%% %%%%%%%%%%");
-		System.out.println("%%%%% %%%%%%%%%%% %%%%%%%%%");
-		System.out.println("%%%% %%%%%%%%%%%%% %%%%%%%%");
-		System.out.println("%%% %%%%%%%%%%%%%%% %%%%%%%");
-		System.out.println("%% %%%%%%%%%%%%%%%%% %%%%%%");
-		System.out.println("% %%%%%%%%%%%%%%%%%%% %%%%%");
-		System.out.println("%% %%%%%%%%%%%%%%%%% %%%%%%");
-		System.out.println("%%% %%%%%%%%%%%%%%% %%%%%%%");
-		System.out.println("%%%% %%%%%%%%%%%%% %%%%%%%%");
-		System.out.println("%%%%% %%%%%%%%%%% %%%%%%%%%");
-		System.out.println("%%%%%% %%%%%%%%% %%%%%%%%%%");
-		System.out.println("%%%%%%% %%%%%%% %%%%%%%%%%%");
-		System.out.println("%%%%%%%% %%%%% %%%%%%%%%%%%");
-		System.out.println("%%%%%%%%% %%% %%%%%%%%%%%%%");
-		System.out.println("%%%%%%%%%% % %%%%%%%%%%%%%%");
-		System.out.println("%%%%%%%%%%% %%%%%%%%%%%%%%%");
-		System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%");
 		// 8. HashMap 요소 삭제
 //		System.out.println(flower.size()+" : "+flower);
 //		flower.remove("price");
