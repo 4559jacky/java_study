@@ -61,7 +61,7 @@ public class MapRun {
 //		}
 		
 		System.out.println("-----------------------");
-		
+		 
 		// 3. HashMap<Key,객체> 요소 추가
 		Map<String,Snack> snackMap = new HashMap<>();
 		snackMap.put("다이제", new Snack("초코맛", 1700));
